@@ -1,13 +1,25 @@
-# OS / Editor
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# VS Code
+# VS Code / IDE
 .vscode/
+.idea/
 
-# Temporary / logs
+# Logs
 *.log
 
-# Python http.server cache (обычно не нужно, но пусть)
+# Temporary files
+*.tmp
+*.bak
+
+# Python
 __pycache__/
+*.pyc
+
+# Node (если вдруг потом появится)
+node_modules/
+
+# Env / secrets (на будущее)
+.env
