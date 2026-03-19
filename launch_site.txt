@@ -1,0 +1,14 @@
+
+in PowerShell:
+
+cd E:\Site\shambala.nyc
+python -m http.server 8001
+
+============================
+Open:
+http://localhost:8001
+
+
+
+
+cd E:\Site\shambala.nyc

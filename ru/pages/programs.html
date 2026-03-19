@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программы — Шамбала NYC</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">Шамбала NYC</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="programs.html" class="active">Программы</a></li>
+          <li><a href="events.html">События</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <div class="lang-switch" aria-label="Переключатель языка">
+        <a href="programs.html" class="active">РУС</a>
+        <a href="../../en/pages/programs.html">ENG</a>
+      </div>
+      <a class="btn btn-primary" href="https://www.paypal.com/" target="_blank" rel="noreferrer">ПОЖЕРТВОВАТЬ</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Программы</h1>
+        <p>Изучите еженедельные и специальные программы центра.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Обзор программ</h2>
+            <p>Каждую карточку программы можно позже дополнить расписанием, преподавателями, регистрацией и фотогалереей.</p>
+          </div>
+        </div>
+        <div class="program-grid">
+          <article class="program-card"><h3>Воскресные занятия</h3><p>Еженедельные занятия по медитации и обсуждению, которые помогают выстроить регулярную духовную практику.</p></article>
+          <article class="program-card"><h3>Религиозная служба</h3><p>Традиционные службы и особые религиозные мероприятия для буддийского сообщества и гостей.</p></article>
+          <article class="program-card"><h3>История бурят</h3><p>Образовательные лекции, визуальные материалы и беседы, посвященные истории и идентичности бурят.</p></article>
+          <article class="program-card"><h3>История калмыков</h3><p>Программы по сохранению калмыцкой памяти, истории и культурной преемственности.</p></article>
+          <article class="program-card"><h3>Тай Чи</h3><p>Занятия мягким движением, дыханием и выравниванием внутреннего состояния.</p></article>
+          <article class="program-card"><h3>Молодежный клуб</h3><p>Активности для молодежи, которые поддерживают обучение, общение и чувство принадлежности.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>1550 McDonald Ave,</span>
+        <span>Brooklyn, NY 11230</span>
+        <a href="mailto:shambhala.bkc@gmail.com">shambhala.bkc@gmail.com</a>
+      </div>
+      <div class="footer-center">© 2026 Shambala NYC</div>
+      <div class="footer-right"></div>
+    </div>
+  </footer>
+
+  <button class="floating-chat-btn" type="button" aria-label="Открыть чат" data-chat-open>💬</button>
+
+  <div class="chat-widget" aria-live="polite">
+    <div class="chat-header">
+      <strong>Чат с админом</strong>
+      <button class="chat-close" type="button" data-chat-close>×</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message">Добро пожаловать в Shambala NYC. Связаться с администратором можно по email или через Telegram.</div>
+      <div class="chat-actions">
+        <a class="btn btn-primary" href="mailto:shambhala.bkc@gmail.com">Написать админу</a>
+        <a class="btn btn-secondary" href="https://t.me/shambala_nyc" target="_blank" rel="noreferrer">Открыть Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <h3 data-modal-title></h3>
+        <button class="modal-close" type="button" data-modal-close>×</button>
+      </div>
+      <p data-modal-text></p>
+    </div>
+  </div>
+
+  <script src="../../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Temporary / logs
+*.log
+
+# Python http.server cache (обычно не нужно, но пусть)
+__pycache__/

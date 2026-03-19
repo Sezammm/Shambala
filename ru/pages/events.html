@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>События — Шамбала NYC</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">Шамбала NYC</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="programs.html">Программы</a></li>
+          <li><a href="events.html" class="active">События</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <div class="lang-switch" aria-label="Переключатель языка">
+        <a href="events.html" class="active">РУС</a>
+        <a href="../../en/pages/events.html">ENG</a>
+      </div>
+      <a class="btn btn-primary" href="https://www.paypal.com/" target="_blank" rel="noreferrer">ПОЖЕРТВОВАТЬ</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>События</h1>
+        <p>Страница событий с фото, кратким описанием и расширенной информацией.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container event-list">
+        <article class="event-card">
+          <div class="event-content">
+            <span class="badge">12 апреля 2026</span>
+            <h3>Весенний день Дхармы и сообщества</h3>
+            <p>День медитации, чаепития и дружеского общения для участников и гостей.</p>
+            <div>
+              <button class="btn btn-primary" type="button" data-title="Весенний день Дхармы и сообщества" data-full-text="Весенний день Дхармы и сообщества включает медитацию с ведущим, короткую беседу о Дхарме, чаепитие и открытую встречу для новых посетителей. Замените этот текст на реальную программу события, информацию о гостях, регистрации, пожертвованиях и местах.">
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <div class="event-image"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Событие 1" /></div>
+        </article>
+
+        <article class="event-card reverse">
+          <div class="event-content">
+            <span class="badge">3 мая 2026</span>
+            <h3>Вечер бурятского наследия</h3>
+            <p>Культурная программа с историями, обсуждением и темами традиционного наследия.</p>
+            <div>
+              <button class="btn btn-primary" type="button" data-title="Вечер бурятского наследия" data-full-text="Вечер бурятского наследия может включать рассказы, семейную память, музыку, фотографии и открытый диалог сообщества. Это модальное окно позволяет оставить страницу аккуратной и при этом показать подробное описание.">
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <div class="event-image"><img src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=1200&q=80" alt="Событие 2" /></div>
+        </article>
+
+        <article class="event-card">
+          <div class="event-content">
+            <span class="badge">7 июня 2026</span>
+            <h3>Открытая встреча молодежного клуба</h3>
+            <p>Свободный формат для молодежи, подростков и семей.</p>
+            <div>
+              <button class="btn btn-primary" type="button" data-title="Открытая встреча молодежного клуба" data-full-text="Открытая встреча молодежного клуба может включать игры, обсуждение, творчество и волонтерскую активность. Позже здесь можно указать возраст, программу, время начала и RSVP.">
+                Подробнее
+              </button>
+            </div>
+          </div>
+          <div class="event-image"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80" alt="Событие 3" /></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>1550 McDonald Ave,</span>
+        <span>Brooklyn, NY 11230</span>
+        <a href="mailto:shambhala.bkc@gmail.com">shambhala.bkc@gmail.com</a>
+      </div>
+      <div class="footer-center">© 2026 Shambala NYC</div>
+      <div class="footer-right"></div>
+    </div>
+  </footer>
+
+  <button class="floating-chat-btn" type="button" aria-label="Открыть чат" data-chat-open>💬</button>
+
+  <div class="chat-widget" aria-live="polite">
+    <div class="chat-header">
+      <strong>Чат с админом</strong>
+      <button class="chat-close" type="button" data-chat-close>×</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message">Добро пожаловать в Shambala NYC. Связаться с администратором можно по email или через Telegram.</div>
+      <div class="chat-actions">
+        <a class="btn btn-primary" href="mailto:shambhala.bkc@gmail.com">Написать админу</a>
+        <a class="btn btn-secondary" href="https://t.me/shambala_nyc" target="_blank" rel="noreferrer">Открыть Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <h3 data-modal-title></h3>
+        <button class="modal-close" type="button" data-modal-close>×</button>
+      </div>
+      <p data-modal-text></p>
+    </div>
+  </div>
+
+  <script src="../../assets/js/script.js"></script>
+</body>
+</html>

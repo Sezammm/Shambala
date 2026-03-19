@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О нас — Шамбала NYC</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">Шамбала NYC</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="about.html" class="active">О нас</a></li>
+          <li><a href="programs.html">Программы</a></li>
+          <li><a href="events.html">События</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <div class="lang-switch" aria-label="Переключатель языка">
+        <a href="about.html" class="active">РУС</a>
+        <a href="../../en/pages/about.html">ENG</a>
+      </div>
+      <a class="btn btn-primary" href="https://www.paypal.com/" target="_blank" rel="noreferrer">ПОЖЕРТВОВАТЬ</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>О нас</h1>
+        <p>Узнайте о миссии Shambala NYC, нашем сообществе и роли центра в Бруклине.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about-layout">
+        <div class="stack">
+          <div class="image-card"><img src="https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=1200&q=80" alt="Детали храма" /></div>
+          <div class="image-card"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80" alt="Встреча сообщества" /></div>
+        </div>
+        <div class="stack">
+          <article class="info-card">
+            <h3>Место практики и общения</h3>
+            <p>В этом шаблоне Shambala NYC представлен как теплый и доступный буддийский культурный центр для местных жителей и гостей.</p>
+            <br />
+            <p>Эта страница готова для ваших реальных фотографий, биографий, информации о линии традиции, истории центра и миссии.</p>
+          </article>
+          <article class="info-card">
+            <h3>Основные ценности</h3>
+            <ul class="list-clean">
+              <li>Среда доброжелательного обучения</li>
+              <li>Уважение к традиции и культуре</li>
+              <li>Открытый дух сообщества</li>
+              <li>Связь поколений</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span>1550 McDonald Ave,</span>
+        <span>Brooklyn, NY 11230</span>
+        <a href="mailto:shambhala.bkc@gmail.com">shambhala.bkc@gmail.com</a>
+      </div>
+      <div class="footer-center">© 2026 Shambala NYC</div>
+      <div class="footer-right"></div>
+    </div>
+  </footer>
+
+  <button class="floating-chat-btn" type="button" aria-label="Открыть чат" data-chat-open>💬</button>
+
+  <div class="chat-widget" aria-live="polite">
+    <div class="chat-header">
+      <strong>Чат с админом</strong>
+      <button class="chat-close" type="button" data-chat-close>×</button>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message">Добро пожаловать в Shambala NYC. Связаться с администратором можно по email или через Telegram.</div>
+      <div class="chat-actions">
+        <a class="btn btn-primary" href="mailto:shambhala.bkc@gmail.com">Написать админу</a>
+        <a class="btn btn-secondary" href="https://t.me/shambala_nyc" target="_blank" rel="noreferrer">Открыть Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <h3 data-modal-title></h3>
+        <button class="modal-close" type="button" data-modal-close>×</button>
+      </div>
+      <p data-modal-text></p>
+    </div>
+  </div>
+
+  <script src="../../assets/js/script.js"></script>
+</body>
+</html>
