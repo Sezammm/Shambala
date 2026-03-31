@@ -1,28 +1,118 @@
 :root {
-  --bg: #f7f2ea;
-  --surface: #fffaf3;
-  --text: #2f241c;
-  --muted: #6a5a4c;
+  --bg: #eaf7ff;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --text: #2b241f;
+  --muted: #665a52;
   --accent: #8a5c2e;
   --accent-dark: #6d431d;
-  --border: #ddcfbf;
-  --shadow: 0 12px 30px rgba(47, 36, 28, 0.12);
+  --border: rgba(172, 150, 124, 0.35);
+  --shadow: 0 12px 30px rgba(47, 36, 28, 0.10);
   --radius: 18px;
   --max: 1180px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.58), transparent 18%),
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.42), transparent 16%),
+    linear-gradient(180deg, #d4efff 0%, #e7f7ff 36%, #f4fbff 68%, #ebf7ff 100%);
+}
+
+/* Дальний слой облаков */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background-image: url("../images/cloud.webp");
+  background-repeat: repeat-x;
+  background-position: 0 28px;
+  background-size: 620px auto;
+  opacity: 0.24;
+  animation: cloudDriftFar 220s linear infinite;
+  will-change: background-position;
+}
+
+/* Боковой орнамент */
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    url("../images/ornament.webp") left top / 52px auto repeat-y,
+    url("../images/ornament.webp") right top / 52px auto repeat-y;
+  opacity: 0.92;
+}
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top right, rgba(138, 92, 46, 0.07), transparent 22%),
-    linear-gradient(180deg, #fbf7f1 0%, #f7f2ea 100%);
   line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* Ближний слой облаков */
+body .sky-clouds-front {
+  display: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  background-image: url("../images/cloud.webp");
+  background-repeat: repeat-x;
+  background-position: 0 115px;
+  background-size: 860px auto;
+  opacity: 0.42;
+  animation: cloudDriftFront 140s linear infinite;
+  will-change: background-position;
+}
+
+/* Персонажи поверх орнамента и облаков */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    url("../images/male.webp") left 8px bottom / clamp(140px, 15vw, 240px) auto no-repeat,
+    url("../images/fem.webp") right 8px bottom / clamp(150px, 16vw, 250px) auto no-repeat;
+}
+
+@keyframes cloudDriftFar {
+  from {
+    background-position: 0 28px;
+  }
+  to {
+    background-position: 620px 28px;
+  }
+}
+
+@keyframes cloudDriftFront {
+  from {
+    background-position: 0 115px;
+  }
+  to {
+    background-position: 860px 115px;
+  }
 }
 
 img {
@@ -43,15 +133,17 @@ button {
 .container {
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 250, 243, 0.92);
-  border-bottom: 1px solid rgba(221, 207, 191, 0.8);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.68);
+  border-bottom: 1px solid rgba(172, 150, 124, 0.25);
 }
 
 .header-inner {
@@ -109,10 +201,11 @@ button {
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  background: #efe4d6;
+  background: rgba(239, 228, 214, 0.82);
   border-radius: 999px;
   padding: 4px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(172, 150, 124, 0.35);
+  backdrop-filter: blur(6px);
 }
 
 .lang-switch a {
@@ -126,7 +219,7 @@ button {
 }
 
 .lang-switch a.active {
-  background: white;
+  background: rgba(255, 255, 255, 0.96);
   color: var(--accent-dark);
   box-shadow: 0 2px 8px rgba(47, 36, 28, 0.08);
 }
@@ -139,7 +232,7 @@ button {
   border-radius: 999px;
   padding: 13px 22px;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   font-weight: 700;
 }
 
@@ -150,6 +243,7 @@ button {
 .btn-primary {
   background: var(--accent);
   color: white;
+  box-shadow: 0 10px 20px rgba(109, 67, 29, 0.14);
 }
 
 .btn-primary:hover {
@@ -157,13 +251,14 @@ button {
 }
 
 .btn-secondary {
-  background: transparent;
-  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.62);
+  border-color: rgba(172, 150, 124, 0.35);
   color: var(--accent-dark);
+  backdrop-filter: blur(6px);
 }
 
 .btn-secondary:hover {
-  background: #f3e8dc;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .menu-toggle {
@@ -171,8 +266,9 @@ button {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  border: 1px solid var(--border);
-  background: white;
+  border: 1px solid rgba(172, 150, 124, 0.35);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
 }
 
 .menu-toggle span {
@@ -220,11 +316,14 @@ button {
 .program-card,
 .event-card,
 .contact-card,
-.hours-card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(221, 207, 191, 0.9);
+.hours-card,
+.modal-card,
+.chat-widget {
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
 .hero-card {
@@ -355,10 +454,11 @@ button {
   width: fit-content;
   padding: 7px 12px;
   border-radius: 999px;
-  background: #efe4d6;
+  background: rgba(239, 228, 214, 0.76);
   color: var(--accent-dark);
   font-size: 0.92rem;
   font-weight: 700;
+  border: 1px solid rgba(172, 150, 124, 0.25);
 }
 
 .list-clean {
@@ -373,8 +473,11 @@ button {
 
 .footer {
   margin-top: 20px;
-  border-top: 1px solid var(--border);
-  background: rgba(255, 250, 243, 0.82);
+  border-top: 1px solid rgba(172, 150, 124, 0.25);
+  background: rgba(255, 255, 255, 0.54);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
 }
 
 .footer-inner {
@@ -415,13 +518,14 @@ button {
   padding: 11px 16px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
   transition: 0.2s ease;
+  backdrop-filter: blur(6px);
 }
 
 .social-link:hover {
-  background: #f3e8dc;
-  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(138, 92, 46, 0.55);
 }
 
 .map-frame {
@@ -458,10 +562,6 @@ button {
   right: 24px;
   bottom: 98px;
   width: min(360px, calc(100vw - 28px));
-  background: #fffaf3;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
   overflow: hidden;
   display: none;
   z-index: 1200;
@@ -490,7 +590,7 @@ button {
 .chat-message {
   padding: 14px 16px;
   border-radius: 16px;
-  background: #f2e7da;
+  background: rgba(242, 231, 218, 0.78);
   color: var(--text);
 }
 
@@ -525,10 +625,8 @@ button {
   width: min(760px, 100%);
   max-height: 90vh;
   overflow: auto;
-  background: #fffaf3;
+  background: var(--surface-strong);
   border-radius: 24px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
   padding: 24px;
 }
 
@@ -559,6 +657,58 @@ button {
   margin: 0;
   color: var(--muted);
   max-width: 65ch;
+}
+
+@media (max-width: 1280px) {
+  html::before {
+    background-size: 540px auto;
+  }
+
+  html::after {
+    background-size: 42px auto, 42px auto;
+  }
+
+  body::before {
+    background-size: 720px auto;
+    background-position: 0 95px;
+  }
+
+  body::after {
+    background:
+      url("../images/male.webp") left 2px bottom / clamp(120px, 13vw, 200px) auto no-repeat,
+      url("../images/fem.webp") right 2px bottom / clamp(125px, 13vw, 205px) auto no-repeat;
+  }
+}
+
+@media (max-width: 1100px) {
+  html::before {
+    background-size: 480px auto;
+    opacity: 0.20;
+    animation-duration: 250s;
+  }
+
+  html::after {
+    background-size: 34px auto, 34px auto;
+    opacity: 0.75;
+  }
+
+  body::before {
+    background-size: 620px auto;
+    background-position: 0 82px;
+    opacity: 0.34;
+    animation-duration: 170s;
+  }
+
+  body::after {
+    opacity: 0.82;
+    background:
+      url("../images/male.webp") left 2px bottom / auto min(52vh, 560px) no-repeat,
+      url("../images/fem.webp") right 2px bottom / auto min(52vh, 560px) no-repeat;
+  }
+
+  .container {
+    width: min(100% - 40px, var(--max));
+  }
 }
 
 @media (max-width: 900px) {
@@ -592,12 +742,13 @@ button {
     top: 86px;
     left: 16px;
     right: 16px;
-    background: rgba(255, 250, 243, 0.98);
+    background: rgba(255, 255, 255, 0.88);
     border: 1px solid var(--border);
     border-radius: 24px;
     box-shadow: var(--shadow);
     padding: 18px;
     display: none;
+    backdrop-filter: blur(10px);
   }
 
   .main-nav.open {
@@ -620,11 +771,37 @@ button {
     width: 100%;
     padding: 10px 12px;
     border-radius: 12px;
-    background: white;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   .menu-toggle {
     display: inline-block;
+  }
+
+  html::before {
+    background-size: 420px auto;
+    background-position: 0 20px;
+    opacity: 0.18;
+    animation-duration: 260s;
+  }
+
+  html::after {
+    background-size: 26px auto, 26px auto;
+    opacity: 0.55;
+  }
+
+  body::before {
+    background-size: 500px auto;
+    background-position: 0 60px;
+    opacity: 0.28;
+    animation-duration: 190s;
+  }
+
+  body::after {
+    opacity: 0.5;
+    background:
+      url("../images/male.webp") left 0 bottom / auto 300px no-repeat,
+      url("../images/fem.webp") right 0 bottom / auto 300px no-repeat;
   }
 }
 
@@ -646,5 +823,45 @@ button {
   .chat-widget {
     right: 12px;
     bottom: 88px;
+  }
+
+  html::before {
+    background-size: 320px auto;
+    background-position: 0 12px;
+    opacity: 0.14;
+    animation-duration: 280s;
+  }
+
+  html::after {
+    background-size: 18px auto, 18px auto;
+    opacity: 0.38;
+  }
+
+  body::before {
+    background-size: 360px auto;
+    background-position: 0 42px;
+    opacity: 0.20;
+    animation-duration: 220s;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .container {
+    width: min(100% - 24px, var(--max));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html::before,
+  body::before {
+    animation: none;
+  }
+
+  .btn,
+  .floating-chat-btn,
+  .main-nav a::after {
+    transition: none;
   }
 }
