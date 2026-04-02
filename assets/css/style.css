@@ -130,6 +130,18 @@ button {
   cursor: pointer;
 }
 
+/* Улучшение читаемости текста поверх облаков */
+h1,
+h2,
+h3,
+p,
+li,
+a,
+span,
+strong {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.55);
+}
+
 .container {
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
@@ -291,15 +303,26 @@ button {
   align-items: center;
 }
 
+/* Подложка под главный текстовый блок */
+.hero-copy {
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(172, 150, 124, 0.22);
+  border-radius: 22px;
+  padding: 26px 24px;
+  box-shadow: 0 10px 26px rgba(47, 36, 28, 0.08);
+  backdrop-filter: blur(8px);
+}
+
 .hero-copy h1 {
   font-size: clamp(2.3rem, 5vw, 4.3rem);
   line-height: 1.05;
   margin: 0 0 16px;
+  font-weight: 800;
 }
 
 .hero-copy p {
   font-size: 1.06rem;
-  color: var(--muted);
+  color: #4f433b;
   max-width: 58ch;
   margin: 0 0 24px;
 }
@@ -350,6 +373,15 @@ button {
   align-items: end;
   gap: 16px;
   margin-bottom: 28px;
+}
+
+/* Подложка под заголовки секций */
+.section-head > div {
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(172, 150, 124, 0.18);
+  border-radius: 18px;
+  padding: 14px 18px;
+  backdrop-filter: blur(6px);
 }
 
 .section-head h2 {
@@ -648,9 +680,19 @@ button {
   padding: 48px 0 12px;
 }
 
+/* Подложка под заголовки внутренних страниц */
+.page-title .container {
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(172, 150, 124, 0.18);
+  border-radius: 22px;
+  padding: 22px 24px;
+  backdrop-filter: blur(6px);
+}
+
 .page-title h1 {
   margin: 0 0 12px;
   font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 800;
 }
 
 .page-title p {
@@ -708,6 +750,10 @@ button {
 
   .container {
     width: min(100% - 40px, var(--max));
+  }
+
+  .hero-copy {
+    padding: 22px 20px;
   }
 }
 
@@ -803,6 +849,12 @@ button {
       url("../images/male.webp") left 0 bottom / auto 300px no-repeat,
       url("../images/fem.webp") right 0 bottom / auto 300px no-repeat;
   }
+
+  .hero-copy,
+  .page-title .container,
+  .section-head > div {
+    padding: 18px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -850,6 +902,17 @@ button {
 
   .container {
     width: min(100% - 24px, var(--max));
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  a,
+  span,
+  strong {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
   }
 }
 
