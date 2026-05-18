@@ -1,4 +1,3 @@
-
 in PowerShell:
 
 cd E:\Site\shambala.nyc
@@ -7,8 +6,27 @@ python -m http.server 8001
 ============================
 Open:
 http://localhost:8001
-
-
-
+============================
 
 cd E:\Site\shambala.nyc
+
+============================
+
+----------------------
+# Repository Structure
+----------------------
+Команда для VSCode для Windows (аналог tree):
+tree /F /A
+----------------------
+
+
+git ls-files |
+  Where-Object {
+    $_ -notmatch 'README\.md$' -and
+    $_ -match '\.(ps1|psm1|psd1|cmd|bat|sh|py|js|ts|tsx|jsx|css|scss|html|htm|md|txt|yml|yaml|json|xml|ini|conf|toml|cs|java|go|rb|php|sql)$'
+  } |
+  ForEach-Object {
+    "`n===== $_ =====`n"
+    Get-Content -LiteralPath $_ -Raw -Encoding UTF8
+  } |
+  Set-Content -Encoding UTF8 RTT-site-domains.txt
