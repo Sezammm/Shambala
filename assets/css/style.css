@@ -10,7 +10,7 @@
   --accent-dark: #6d431d;
   --border: rgba(172, 150, 124, 0.35);
   --shadow: 0 12px 30px rgba(47, 36, 28, 0.10);
-  --radius: 18px;
+  --radius: 8px;
   --max: 1180px;
 }
 
@@ -287,7 +287,7 @@ strong {
   display: none;
   width: 48px;
   height: 48px;
-  border-radius: 14px;
+  border-radius: 7px;
   border: 1px solid rgba(172, 150, 124, 0.35);
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(6px);
@@ -317,7 +317,7 @@ strong {
 .hero-copy {
   background: rgba(255, 255, 255, 0.56);
   border: 1px solid rgba(172, 150, 124, 0.22);
-  border-radius: 22px;
+  border-radius: 10px;
   padding: 26px 24px;
   box-shadow: 0 10px 26px rgba(47, 36, 28, 0.08);
   backdrop-filter: blur(8px);
@@ -370,7 +370,7 @@ strong {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: calc(var(--radius) - 4px);
+  border-radius: calc(var(--radius) - 3px);
 }
 
 .section {
@@ -389,7 +389,7 @@ strong {
 .section-head > div {
   background: rgba(255, 255, 255, 0.44);
   border: 1px solid rgba(172, 150, 124, 0.18);
-  border-radius: 18px;
+  border-radius: 8px;
   padding: 14px 18px;
   backdrop-filter: blur(6px);
 }
@@ -481,10 +481,30 @@ strong {
 }
 
 .event-content {
-  padding: 24px;
-  display: grid;
-  align-content: center;
-  gap: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.event-content .badge {
+  margin-bottom: 22px;
+}
+
+.event-content h3 {
+  margin: 0 0 10px;
+  line-height: 1.18;
+}
+
+.event-content p {
+  margin: 0 0 22px;
+  line-height: 1.52;
+}
+
+.event-actions {
+  margin-top: 4px;
 }
 
 .event-image {
@@ -688,7 +708,7 @@ strong {
 
 .chat-message {
   padding: 14px 16px;
-  border-radius: 16px;
+  border-radius: 7px;
   background: rgba(242, 231, 218, 0.78);
   color: var(--text);
 }
@@ -725,7 +745,7 @@ strong {
   max-height: 90vh;
   overflow: auto;
   background: var(--surface-strong);
-  border-radius: 24px;
+  border-radius: 10px;
   padding: 24px;
 }
 
@@ -751,7 +771,7 @@ strong {
 .page-title .container {
   background: rgba(255, 255, 255, 0.48);
   border: 1px solid rgba(172, 150, 124, 0.18);
-  border-radius: 22px;
+  border-radius: 10px;
   padding: 22px 24px;
   backdrop-filter: blur(6px);
 }
@@ -766,6 +786,77 @@ strong {
   margin: 0;
   color: var(--muted);
   max-width: 65ch;
+}
+
+
+/* Страница отдельного события */
+.event-detail {
+  padding: 34px 0 78px;
+}
+
+.event-detail-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.event-back {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.event-detail-card h1 {
+  margin: 0 0 26px;
+  text-align: center;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.event-detail-card p {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.event-detail-meta {
+  margin: 30px 0;
+}
+
+.event-detail-meta p {
+  margin-bottom: 8px;
+}
+
+.event-detail-meta strong,
+.event-highlights strong {
+  font-weight: 800;
+}
+
+.event-detail-quote {
+  margin: 26px 0;
+  font-style: italic;
+}
+
+.event-detail-image {
+  width: min(760px, 100%);
+  margin: 46px auto 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.event-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 1280px) {
@@ -857,7 +948,7 @@ strong {
     right: 16px;
     background: rgba(255, 255, 255, 0.88);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 10px;
     box-shadow: var(--shadow);
     padding: 18px;
     display: none;
@@ -883,7 +974,7 @@ strong {
     display: inline-block;
     width: 100%;
     padding: 10px 12px;
-    border-radius: 12px;
+    border-radius: 6px;
     background: rgba(255, 255, 255, 0.82);
   }
 
@@ -921,6 +1012,23 @@ strong {
   .page-title .container,
   .section-head > div {
     padding: 18px;
+  }
+
+  .event-content {
+    padding: 30px 24px;
+    justify-content: flex-start;
+  }
+
+  .event-content .badge {
+    margin-bottom: 20px;
+  }
+
+  .event-content h3 {
+    margin-bottom: 8px;
+  }
+
+  .event-content p {
+    margin-bottom: 24px;
   }
 
   .map-block {
