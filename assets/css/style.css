@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap");
 
 :root {
@@ -103,7 +104,7 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background:
-    url("../images/male.webp") left 8px bottom / clamp(140px, 15vw, 240px) auto no-repeat,
+    url("../images/male.webp") left 8px bottom / clamp(158px, 17vw, 265px) auto no-repeat,
     url("../images/fem.webp") right 8px bottom / clamp(150px, 16vw, 250px) auto no-repeat;
 }
 
@@ -819,18 +820,32 @@ strong {
 }
 
 .event-detail-card p {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   color: var(--text);
   font-size: 1.04rem;
-  line-height: 1.72;
+  line-height: 1.42;
+}
+
+.event-detail-card > p {
+  max-width: 92ch;
 }
 
 .event-detail-meta {
-  margin: 30px 0;
+  margin: 24px 0 26px;
 }
 
 .event-detail-meta p {
-  margin-bottom: 8px;
+  margin: 0 0 6px;
+  line-height: 1.36;
+}
+
+.event-highlights {
+  margin-top: 24px;
+}
+
+.event-highlights p {
+  margin: 0 0 10px;
+  line-height: 1.36;
 }
 
 .event-detail-meta strong,
@@ -839,8 +854,9 @@ strong {
 }
 
 .event-detail-quote {
-  margin: 26px 0;
+  margin: 22px 0;
   font-style: italic;
+  line-height: 1.45;
 }
 
 .event-detail-image {
@@ -854,6 +870,112 @@ strong {
 }
 
 .event-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Program cards with images */
+.program-card-link {
+  display: block;
+  color: inherit;
+  padding: 18px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.program-card-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(138, 92, 46, 0.55);
+  box-shadow: 0 16px 34px rgba(47, 36, 28, 0.14);
+}
+
+.program-card-link h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.12;
+}
+
+.program-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 3px);
+  background: rgba(239, 228, 214, 0.45);
+}
+
+.program-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Individual program pages */
+.program-detail {
+  padding: 34px 0 78px;
+}
+
+.program-detail-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.program-back {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.program-detail-card h1 {
+  margin: 0 0 26px;
+  text-align: center;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.program-detail-card p {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.42;
+}
+
+.program-detail-card > p {
+  max-width: 96ch;
+}
+
+.program-schedule {
+  margin: 22px 0 28px;
+}
+
+.program-schedule h3 {
+  margin: 0 0 10px;
+}
+
+.program-schedule p {
+  margin: 0 0 6px;
+  line-height: 1.36;
+}
+
+.program-detail-image {
+  width: min(760px, 100%);
+  margin: 38px auto 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.program-detail-image img {
   width: 100%;
   height: auto;
   display: block;
@@ -875,7 +997,7 @@ strong {
 
   body::after {
     background:
-      url("../images/male.webp") left 2px bottom / clamp(120px, 13vw, 200px) auto no-repeat,
+      url("../images/male.webp") left 2px bottom / clamp(132px, 14vw, 220px) auto no-repeat,
       url("../images/fem.webp") right 2px bottom / clamp(125px, 13vw, 205px) auto no-repeat;
   }
 }
@@ -902,7 +1024,7 @@ strong {
   body::after {
     opacity: 0.82;
     background:
-      url("../images/male.webp") left 2px bottom / auto min(52vh, 560px) no-repeat,
+      url("../images/male.webp") left 2px bottom / auto min(54vh, 580px) no-repeat,
       url("../images/fem.webp") right 2px bottom / auto min(52vh, 560px) no-repeat;
   }
 
@@ -1004,7 +1126,7 @@ strong {
   body::after {
     opacity: 0.5;
     background:
-      url("../images/male.webp") left 0 bottom / auto 300px no-repeat,
+      url("../images/male.webp") left 0 bottom / auto 315px no-repeat,
       url("../images/fem.webp") right 0 bottom / auto 300px no-repeat;
   }
 
