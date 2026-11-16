@@ -13,7 +13,7 @@ cd E:\Site\shambala.nyc
 ========================================================
 
 git add -A
-git commit -m "Cosmetic change ver.21"
+git commit -m "Cosmetic change ver.3"
 git push
 
 --------------------------------------------------------
