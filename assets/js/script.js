@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const copyrightYear = document.getElementById("copyright-year");
+  const copyrightYear = document.getElementById("copyright-year");
 
   if (copyrightYear) {
     const startYear = 2026;
