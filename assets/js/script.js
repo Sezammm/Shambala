@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    const copyrightYear = document.getElementById("copyright-year");
+
+  if (copyrightYear) {
+    const startYear = 2026;
+    const currentYear = new Date().getFullYear();
+
+    copyrightYear.textContent =
+      currentYear > startYear
+        ? `${startYear}–${currentYear}`
+        : String(startYear);
+  }
+
   const nav = document.querySelector(".main-nav");
   const menuToggle = document.querySelector(".menu-toggle");
   const chatWidget = document.querySelector(".chat-widget");
